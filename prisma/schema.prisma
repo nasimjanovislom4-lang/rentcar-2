@@ -1,0 +1,119 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Car {
+  id              String      @id @default(cuid())
+  name            String
+  brand           String
+  model           String
+  year            Int
+  plateNumber     String      @unique
+  vinCode         String      @unique
+  color           String
+  category        String      // "SEDAN", "SUV", "PREMIUM", "ECONOMY"
+  transmission    String      // "AUTOMATIC", "MANUAL"
+  fuelType        String      // "PETROL", "DIESEL", "HYBRID", "ELECTRIC"
+  seats           Int         @default(5)
+  dailyPrice      Float
+  depositAmount   Float       @default(1000000)
+  mileage         Int         @default(0)
+  status          String      @default("AVAILABLE") // "AVAILABLE", "RENTED", "MAINTENANCE", "RESERVED"
+  features        String      // JSON array string of perks
+  images          String      // JSON array of image URLs
+  currentLat      Float       @default(41.311081)
+  currentLng      Float       @default(69.240562)
+  insuranceExpiry DateTime
+  nextServiceDate DateTime
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  bookings        Booking[]
+  expenses        Expense[]
+}
+
+model Client {
+  id                  String      @id @default(cuid())
+  fullName            String
+  phone               String      @unique
+  email               String?
+  passportNumber      String      @unique
+  driverLicenseNumber String      @unique
+  passportDocUrl      String?
+  licenseDocUrl       String?
+  status              String      @default("VERIFIED") // "VERIFIED", "PENDING", "REJECTED", "BLACKLISTED"
+  blacklistReason     String?
+  rating              Float       @default(5.0)
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+  bookings            Booking[]
+}
+
+model Booking {
+  id             String    @id @default(cuid())
+  bookingNumber  String    @unique
+  carId          String
+  car            Car       @relation(fields: [carId], references: [id], onDelete: Cascade)
+  clientId       String
+  client         Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  startDate      DateTime
+  endDate        DateTime
+  totalDays      Int
+  dailyRate      Float
+  extraServices  String    @default("[]") // JSON string of selected options
+  totalPrice     Float
+  depositAmount  Float
+  status         String    @default("NEW") // "NEW", "CONFIRMED", "VERIFYING_DOCS", "CAR_HANDED", "COMPLETED", "CANCELLED"
+  paymentStatus  String    @default("PENDING") // "PENDING", "PAID", "REFUNDED"
+  paymentMethod  String    @default("PAYME") // "PAYME", "CLICK", "CASH", "BANK_TRANSFER"
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  contract       Contract?
+}
+
+model Contract {
+  id                String    @id @default(cuid())
+  contractNumber    String    @unique
+  bookingId         String    @unique
+  booking           Booking   @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  contractDate      DateTime  @default(now())
+  mileageAtStart    Int
+  mileageAtReturn   Int?
+  fuelLevelAtStart  String    @default("100%")
+  fuelLevelAtReturn String?
+  signedAt          DateTime?
+  pdfUrl            String?
+}
+
+model Expense {
+  id          String   @id @default(cuid())
+  carId       String
+  car         Car      @relation(fields: [carId], references: [id], onDelete: Cascade)
+  type        String   // "MAINTENANCE", "OIL_CHANGE", "REPAIR", "FINE", "INSURANCE"
+  amount      Float
+  description String
+  date        DateTime @default(now())
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("MANAGER") // "SUPER_ADMIN", "MANAGER", "MECHANIC", "ACCOUNTANT"
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  title     String
+  message   String
+  type      String   // "INSURANCE_EXPIRING", "SERVICE_DUE", "OVERDUE_RETURN", "NEW_BOOKING"
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
