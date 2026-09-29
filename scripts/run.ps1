@@ -3,7 +3,7 @@
 
 Write-Host ""
 Write-Host "================================================================" -ForegroundColor Cyan
-Write-Host "  🚗 AutoRent Pro - Avtomobil Ijarasi va CRM Boshqaruv Tizimi" -ForegroundColor Yellow
+Write-Host "  AutoRent Pro - Avtomobil Ijarasi va CRM Boshqaruv Tizimi" -ForegroundColor Yellow
 Write-Host "================================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -32,28 +32,25 @@ if (-not (Test-Path "node_modules")) {
 
 # 3. Check SQLite database
 if (-not (Test-Path "prisma\dev.db")) {
-    Write-Host "[3/3] Ma'lumotlar bazasi initsializatsiya qilinmoqda va dastlabki ma'lumotlar joylanmoqda..." -ForegroundColor Yellow
+    Write-Host "[3/3] Baza yaratilmoqda va dastlabki ma'lumotlar kiritilmoqda..." -ForegroundColor Yellow
     npx prisma db push
     npx tsx prisma/seed.ts
 } else {
-    Write-Host "[3/3] SQLite ma'lumotlar bazasi (dev.db) tayyor." -ForegroundColor Green
+    Write-Host "[3/3] SQLite bazasi (dev.db) tayyor." -ForegroundColor Green
 }
 
 Write-Host ""
 Write-Host "================================================================" -ForegroundColor Cyan
-Write-Host "  🚀 Tizim muvaffaqiyatli ishga tushmoqda!" -ForegroundColor Green
-Write-Host "  🌐 Asosiy sayt:  http://localhost:3000" -ForegroundColor White
-Write-Host "  📊 Admin panel:  http://localhost:3000/admin/dashboard" -ForegroundColor White
+Write-Host "  Tizim muvaffaqiyatli ishga tushmoqda!" -ForegroundColor Green
+Write-Host "  Asosiy sayt:  http://localhost:3000" -ForegroundColor White
+Write-Host "  Admin panel:  http://localhost:3000/admin/dashboard" -ForegroundColor White
 Write-Host "================================================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Brauzer avtomatik ochiladi... Serverni to'xtatish uchun: Ctrl+C" -ForegroundColor Gray
+Write-Host "Brauzer ochilmoqda... Serverni to'xtatish: Ctrl+C" -ForegroundColor Gray
 Write-Host ""
 
-# Open browser in background after 3 seconds
-Start-Job -ScriptBlock {
-    Start-Sleep -Seconds 3
-    Start-Process "http://localhost:3000"
-} | Out-Null
+# Open browser in background after 2 seconds
+Start-Process "http://localhost:3000"
 
 # Run Next.js server
 npm run dev
