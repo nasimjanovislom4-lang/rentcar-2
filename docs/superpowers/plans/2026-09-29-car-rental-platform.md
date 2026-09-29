@@ -1,6 +1,6 @@
 # Car Rental Platform (Rent-a-Car Ecosystem) Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Avtomobil ijarasi biznesi uchun to‘liq funksional, zamonaviy UI/UX (Glassmorphism, Dark/Light mode) ga ega Mijoz Portali va Admin CRM & Avtopark nazorati (GPS xarita, Kanban, PDF shartnoma generatori, Blacklist, Moliyaviy hisobotlar, RBAC) tizimini yaratish.
 
@@ -34,12 +34,12 @@
 **Interfaces:**
 - Produces: Ishchi Next.js App Router serveri va TypeScript konfiguratsiyasi.
 
-- [ ] **Step 1: package.json va bog'liqliklarni o'rnatish**
+- [x] **Step 1: package.json va bog'liqliklarni o'rnatish**
   * `next`, `react`, `react-dom`, `@prisma/client`, `prisma`, `typescript`, `@types/node`, `@types/react` paketlarini sozlash va o'rnatish.
-- [ ] **Step 2: tsconfig.json va next.config.ts yaratish**
-- [ ] **Step 3: Boshlang'ich app/layout.tsx va app/page.tsx ni tekshirish**
-- [ ] **Step 4: Ishga tushirishni va buildni tekshirish (`npm run build`)**
-- [ ] **Step 5: Commit**
+- [x] **Step 2: tsconfig.json va next.config.ts yaratish**
+- [x] **Step 3: Boshlang'ich app/layout.tsx va app/page.tsx ni tekshirish**
+- [x] **Step 4: Ishga tushirishni va buildni tekshirish (`npm run build`)**
+- [x] **Step 5: Commit**
   ```bash
   git add .
   git commit -m "chore: scaffold Next.js TypeScript project with basic layout"
@@ -56,11 +56,11 @@
 **Interfaces:**
 - Produces: `--bg-primary`, `--bg-surface`, `--text-primary`, `--accent-blue`, `--accent-yellow`, `--accent-green`, `--glass-bg`, `--glass-border` CSS o'zgaruvchilari va rejim almashtiruvchi komponent.
 
-- [ ] **Step 1: app/globals.css da to'liq ranglar va Glassmorphic sinflarni yozish**
-- [ ] **Step 2: components/ThemeToggle.tsx yaratish (localStorage bilan ishlash)**
-- [ ] **Step 3: app/layout.tsx ga ThemeToggle va globals.css ni ulash**
-- [ ] **Step 4: Mavzu almashinishini brauzerda tekshirish**
-- [ ] **Step 5: Commit**
+- [x] **Step 1: app/globals.css da to'liq ranglar va Glassmorphic sinflarni yozish**
+- [x] **Step 2: components/ThemeToggle.tsx yaratish (localStorage bilan ishlash)**
+- [x] **Step 3: app/layout.tsx ga ThemeToggle va globals.css ni ulash**
+- [x] **Step 4: Mavzu almashinishini brauzerda tekshirish**
+- [x] **Step 5: Commit**
   ```bash
   git add app/globals.css components/ThemeToggle.tsx app/layout.tsx
   git commit -m "feat: implement Vanilla CSS design tokens and dark/light theme switcher"
@@ -78,11 +78,11 @@
 **Interfaces:**
 - Produces: `Car`, `Client`, `Booking`, `Contract`, `Expense`, `User`, `Notification` modellari va `prisma` singleton mijozi.
 
-- [ ] **Step 1: prisma/schema.prisma faylini spetsifikatsiyadagi modellar bilan to'ldirish**
-- [ ] **Step 2: lib/prisma.ts faylida PrismaClient singleton yaratish**
-- [ ] **Step 3: prisma/seed.ts da O'zbekiston bozoridagi real avtomobillar (Tahoe, Malibu 2, Tracker 2, BYD Song Plus, Cobalt, Kia K5), dastlabki mijozlar, buyurtmalar va admin xodimlarni kiritish**
-- [ ] **Step 4: `npx prisma db push` va `npx tsx prisma/seed.ts` komandalarini yurgizib bazani to'ldirish**
-- [ ] **Step 5: Commit**
+- [x] **Step 1: prisma/schema.prisma faylini spetsifikatsiyadagi modellar bilan to'ldirish**
+- [x] **Step 2: lib/prisma.ts faylida PrismaClient singleton yaratish**
+- [x] **Step 3: prisma/seed.ts da O'zbekiston bozoridagi real avtomobillar (Tahoe, Malibu 2, Tracker 2, BYD Song Plus, Cobalt, Kia K5), dastlabki mijozlar, buyurtmalar va admin xodimlarni kiritish**
+- [x] **Step 4: `npx prisma db push` va `npx tsx prisma/seed.ts` komandalarini yurgizib bazani to'ldirish**
+- [x] **Step 5: Commit**
   ```bash
   git add prisma/ lib/prisma.ts
   git commit -m "feat: setup Prisma SQLite schema and seed mock automotive data"
@@ -102,11 +102,11 @@
 - Consumes: `prisma.car.findMany()`
 - Produces: Bosh sahifadagi qidiruv paneli, mashhurlar vidjeti, afzalliklar va sharhlar bloklari.
 
-- [ ] **Step 1: components/Navbar.tsx va components/Footer.tsx yaratish**
-- [ ] **Step 2: components/CarCard.tsx (Glassmorphism, hover effektlar, narx, o'rindiqlar va transmissiya ko'rinishi)**
-- [ ] **Step 3: components/HeroQuickSearch.tsx (olish joyi, sana/vaqt tanlash va katalogga yo'naltirish)**
-- [ ] **Step 4: app/page.tsx ni yig'ish va server component orqali avtomobillarni ko'rsatish**
-- [ ] **Step 5: Commit**
+- [x] **Step 1: components/Navbar.tsx va components/Footer.tsx yaratish**
+- [x] **Step 2: components/CarCard.tsx (Glassmorphism, hover effektlar, narx, o'rindiqlar va transmissiya ko'rinishi)**
+- [x] **Step 3: components/HeroQuickSearch.tsx (olish joyi, sana/vaqt tanlash va katalogga yo'naltirish)**
+- [x] **Step 4: app/page.tsx ni yig'ish va server component orqali avtomobillarni ko'rsatish**
+- [x] **Step 5: Commit**
   ```bash
   git add app/page.tsx components/
   git commit -m "feat: build modern client landing page with hero search and car cards"
@@ -126,12 +126,12 @@
 - Consumes: `/api/cars` va `prisma.car.findUnique()`
 - Produces: Dinamik filtrlash (sahifani yangilamasdan), 360/galereya ko'rinishi va bandlik taqvimi.
 
-- [ ] **Step 1: app/api/cars/route.ts API handlerini yaratish**
-- [ ] **Step 2: components/LiveCarFilters.tsx (kuzov, yoqilg'i, transmissiya, narx slayderi)**
-- [ ] **Step 3: app/cars/page.tsx katalog sahifasini yaratish**
-- [ ] **Step 4: components/CarGallery360.tsx va AvailabilityCalendar.tsx yaratish**
-- [ ] **Step 5: app/cars/[id]/page.tsx mashina tafsilotlari sahifasini qurish**
-- [ ] **Step 6: Commit**
+- [x] **Step 1: app/api/cars/route.ts API handlerini yaratish**
+- [x] **Step 2: components/LiveCarFilters.tsx (kuzov, yoqilg'i, transmissiya, narx slayderi)**
+- [x] **Step 3: app/cars/page.tsx katalog sahifasini yaratish**
+- [x] **Step 4: components/CarGallery360.tsx va AvailabilityCalendar.tsx yaratish**
+- [x] **Step 5: app/cars/[id]/page.tsx mashina tafsilotlari sahifasini qurish**
+- [x] **Step 6: Commit**
   ```bash
   git add app/cars/ app/api/cars/ components/
   git commit -m "feat: car catalog with live filters and car detail page with gallery and calendar"
@@ -151,11 +151,11 @@
 - Consumes: `calculateBookingPrice(days, dailyRate, extraServices, deposit)`
 - Produces: Yangi buyurtma yaratish, sanalar to'qnashuvi va qora ro'yxat tekshiruvi.
 
-- [ ] **Step 1: lib/pricing.ts da narx hisoblagichini yaratish va unit test yozish**
-- [ ] **Step 2: app/api/bookings/route.ts (POST: tekshirish, mijoz yaratish/yangilash, buyurtma yozish)**
-- [ ] **Step 3: app/checkout/page.tsx (sana -> qo'shimcha xizmatlar -> mijoz ma'lumotlari -> to'lov usuli)**
-- [ ] **Step 4: app/booking/[id]/page.tsx (buyurtma kodi, holati va qisqacha ma'lumotlar)**
-- [ ] **Step 5: Commit**
+- [x] **Step 1: lib/pricing.ts da narx hisoblagichini yaratish va unit test yozish**
+- [x] **Step 2: app/api/bookings/route.ts (POST: tekshirish, mijoz yaratish/yangilash, buyurtma yozish)**
+- [x] **Step 3: app/checkout/page.tsx (sana -> qo'shimcha xizmatlar -> mijoz ma'lumotlari -> to'lov usuli)**
+- [x] **Step 4: app/booking/[id]/page.tsx (buyurtma kodi, holati va qisqacha ma'lumotlar)**
+- [x] **Step 5: Commit**
   ```bash
   git add app/checkout/ app/booking/ app/api/bookings/ lib/pricing.ts tests/
   git commit -m "feat: implement one-page checkout flow with conflict checks and receipt page"
@@ -175,10 +175,10 @@
 **Interfaces:**
 - Produces: Bugungi tushum, faol ijaradagi mashinalar, kutilayotgan buyurtmalar va texnik ogohlantirishlar vidjeti.
 
-- [ ] **Step 1: app/admin/layout.tsx va components/admin/AdminSidebar.tsx navigatsiyasini qurish**
-- [ ] **Step 2: app/api/admin/stats/route.ts (real tushum, mashinalar holati, statistikalar)**
-- [ ] **Step 3: app/admin/dashboard/page.tsx va StatCard / NotificationList komponentlarini yig'ish**
-- [ ] **Step 4: Commit**
+- [x] **Step 1: app/admin/layout.tsx va components/admin/AdminSidebar.tsx navigatsiyasini qurish**
+- [x] **Step 2: app/api/admin/stats/route.ts (real tushum, mashinalar holati, statistikalar)**
+- [x] **Step 3: app/admin/dashboard/page.tsx va StatCard / NotificationList komponentlarini yig'ish**
+- [x] **Step 4: Commit**
   ```bash
   git add app/admin/ components/admin/ app/api/admin/
   git commit -m "feat: admin layout and dashboard with real-time stats and alert notifications"
@@ -196,10 +196,10 @@
 **Interfaces:**
 - Produces: Avtopark ro'yxati, Leaflet GPS xaritasi, yangi avtomobil qo'shish va texnik xizmat/ROI hisobi.
 
-- [ ] **Step 1: components/admin/GPSMap.tsx (Leaflet xaritasi bilan avtomobillar joylashuvi markerlari)**
-- [ ] **Step 2: components/admin/CarEditModal.tsx (avtomobil qo'shish va tahrirlash)**
-- [ ] **Step 3: app/admin/fleet/page.tsx sahifasida avtopark jadvali va xarajatlar/ROI moduli**
-- [ ] **Step 4: Commit**
+- [x] **Step 1: components/admin/GPSMap.tsx (Leaflet xaritasi bilan avtomobillar joylashuvi markerlari)**
+- [x] **Step 2: components/admin/CarEditModal.tsx (avtomobil qo'shish va tahrirlash)**
+- [x] **Step 3: app/admin/fleet/page.tsx sahifasida avtopark jadvali va xarajatlar/ROI moduli**
+- [x] **Step 4: Commit**
   ```bash
   git add app/admin/fleet/ components/admin/GPSMap.tsx components/admin/CarEditModal.tsx
   git commit -m "feat: fleet management with interactive GPS tracking map and vehicle ROI editor"
@@ -218,11 +218,11 @@
 **Interfaces:**
 - Produces: Buyurtmalar holatini drag/click bilan o'zgartirish, O'zbekiston qonunchiligiga mos rasmiy PDF shartnoma va qabul-topshirish aktini generatsiya qilish.
 
-- [ ] **Step 1: components/admin/KanbanBoard.tsx (statuslar oqimi)**
-- [ ] **Step 2: lib/contractGenerator.ts (shartnoma va topshirish dalolatnomasi matnlari va PDF generator)**
-- [ ] **Step 3: components/admin/ContractModal.tsx (shartnomani ko'rish, chop etish va yuklab olish)**
-- [ ] **Step 4: app/admin/bookings/page.tsx ga ulash**
-- [ ] **Step 5: Commit**
+- [x] **Step 1: components/admin/KanbanBoard.tsx (statuslar oqimi)**
+- [x] **Step 2: lib/contractGenerator.ts (shartnoma va topshirish dalolatnomasi matnlari va PDF generator)**
+- [x] **Step 3: components/admin/ContractModal.tsx (shartnomani ko'rish, chop etish va yuklab olish)**
+- [x] **Step 4: app/admin/bookings/page.tsx ga ulash**
+- [x] **Step 5: Commit**
   ```bash
   git add app/admin/bookings/ components/admin/KanbanBoard.tsx lib/contractGenerator.ts
   git commit -m "feat: bookings Kanban board and automated PDF contract & handover act generator"
@@ -240,10 +240,10 @@
 **Interfaces:**
 - Produces: Mijoz profili, hujjatlarni tasdiqlash/rad etish, qora ro'yxatga olish, moliyaviy hisobotlar va xodimlar rollari (RBAC).
 
-- [ ] **Step 1: app/admin/clients/page.tsx va ClientDetailModal (verifikatsiya va Blacklist)**
-- [ ] **Step 2: app/admin/finance/page.tsx (tushumlar grafigi, to'lov turlari, CSV/Excel eksport)**
-- [ ] **Step 3: app/admin/team/page.tsx (rollar: Super Admin, Menejer, Mexanik, Buxgalter)**
-- [ ] **Step 4: Commit**
+- [x] **Step 1: app/admin/clients/page.tsx va ClientDetailModal (verifikatsiya va Blacklist)**
+- [x] **Step 2: app/admin/finance/page.tsx (tushumlar grafigi, to'lov turlari, CSV/Excel eksport)**
+- [x] **Step 3: app/admin/team/page.tsx (rollar: Super Admin, Menejer, Mexanik, Buxgalter)**
+- [x] **Step 4: Commit**
   ```bash
   git add app/admin/clients/ app/admin/finance/ app/admin/team/
   git commit -m "feat: customer CRM with blacklist verification, financial reports and RBAC"
@@ -258,10 +258,10 @@
 **Interfaces:**
 - Produces: Xatosiz TypeScript kompilyatsiyasi (`tsc --noEmit`), muvaffaqiyatli `npm run build` va to'liq ishchi tizim.
 
-- [ ] **Step 1: TypeScript tekshiruvini yurgizish (`npx tsc --noEmit`)**
-- [ ] **Step 2: Next.js ishlab chiqarish buildini yurgizish (`npm run build`)**
-- [ ] **Step 3: Mijoz portali va Admin CRM to'liq integratsiyasini tekshirish**
-- [ ] **Step 4: Yakuniy commit**
+- [x] **Step 1: TypeScript tekshiruvini yurgizish (`npx tsc --noEmit`)**
+- [x] **Step 2: Next.js ishlab chiqarish buildini yurgizish (`npm run build`)**
+- [x] **Step 3: Mijoz portali va Admin CRM to'liq integratsiyasini tekshirish**
+- [x] **Step 4: Yakuniy commit**
   ```bash
   git add .
   git commit -m "chore: complete car rental platform verification and build"
