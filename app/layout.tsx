@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AutoRent Pro — Avtomobil Ijarasi Platformasi",
-  description: "O'zbekistonda zamonaviy avtomobillar ijarasi va avtopark boshqaruvi tizimi",
+  description: "O'zbekistonda zamonaviy avtomobillar ijarasi, onlayn bron va avtopark boshqaruvi tizimi",
 };
 
 export default function RootLayout({
@@ -12,6 +13,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uz" data-theme="dark">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
