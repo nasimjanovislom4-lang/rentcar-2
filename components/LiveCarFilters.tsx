@@ -1,5 +1,7 @@
 "use client";
 
+import SiteIcon from "@/components/SiteIcon";
+
 export interface FilterState {
   search: string;
   category: string;
@@ -46,7 +48,7 @@ export default function LiveCarFilters({
 
       {/* Search Input */}
       <div className="form-group">
-        <label className="form-label">🔍 Tezkor qidiruv</label>
+        <label className="form-label"><SiteIcon name="search" size={16} /> Tezkor qidiruv</label>
         <input
           type="text"
           placeholder="Model yoki brend..."
@@ -59,7 +61,7 @@ export default function LiveCarFilters({
 
       {/* Category */}
       <div className="form-group">
-        <label className="form-label">🚘 Kuzov toifasi</label>
+        <label className="form-label"><SiteIcon name="carFront" size={16} /> Kuzov toifasi</label>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.4rem" }}>
           {[
             { label: "Barchasi", val: "ALL" },
@@ -85,7 +87,7 @@ export default function LiveCarFilters({
 
       {/* Transmission */}
       <div className="form-group">
-        <label className="form-label">🕹️ Uzatmalar qutisi</label>
+        <label className="form-label"><SiteIcon name="settings" size={16} /> Uzatmalar qutisi</label>
         <select
           value={filters.transmission}
           onChange={(e) => onFilterChange({ ...filters, transmission: e.target.value })}
@@ -99,7 +101,7 @@ export default function LiveCarFilters({
 
       {/* Fuel Type */}
       <div className="form-group">
-        <label className="form-label">⛽ Yonilg'i turi</label>
+        <label className="form-label"><SiteIcon name="fuel" size={16} /> Yonilg'i turi</label>
         <select
           value={filters.fuelType}
           onChange={(e) => onFilterChange({ ...filters, fuelType: e.target.value })}
@@ -115,7 +117,7 @@ export default function LiveCarFilters({
       {/* Price Slider */}
       <div className="form-group">
         <div className="flex-between">
-          <label className="form-label">💰 Maksimal narx / kun</label>
+          <label className="form-label"><SiteIcon name="circleDollar" size={16} /> Maksimal narx / kun</label>
           <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--accent-blue)" }}>
             {formatPrice(filters.maxPrice)}
           </span>

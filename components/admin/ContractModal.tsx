@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { generateContractPDF, ContractData } from "@/lib/contractGenerator";
+import SiteIcon from "@/components/SiteIcon";
 
 interface ContractModalProps {
   isOpen: boolean;
@@ -95,7 +96,7 @@ export default function ContractModal({ isOpen, onClose, bookingData }: Contract
             </h2>
           </div>
           <button onClick={onClose} style={{ fontSize: "1.3rem", color: "var(--text-muted)" }}>
-            ✕
+            <SiteIcon name="x" size={18} />
           </button>
         </div>
 
@@ -136,7 +137,7 @@ export default function ContractModal({ isOpen, onClose, bookingData }: Contract
               <strong>Muddat va To'lov:</strong> {contractData.startDate} dan {contractData.endDate} gacha ({contractData.totalDays} kun). Jami: {formatPrice(contractData.totalPrice)} (Depozit: {formatPrice(contractData.depositAmount)}).
             </p>
             <p style={{ fontStyle: "italic", color: "#334155", background: "#f1f5f9", padding: "0.5rem", borderRadius: "4px" }}>
-              ✓ Dalolatnoma: Avtomobil soz, toza holatda, to'liq KASKO sug'urta bilan qabul qilindi va topshirildi.
+              <SiteIcon name="check" size={14} /> Dalolatnoma: Avtomobil soz, toza holatda, to'liq KASKO sug'urta bilan qabul qilindi va topshirildi.
             </p>
           </div>
         </div>
@@ -144,7 +145,7 @@ export default function ContractModal({ isOpen, onClose, bookingData }: Contract
         {/* Action Buttons */}
         <div style={{ display: "flex", gap: "1rem", justifyContent: "flex-end" }}>
           <button onClick={handlePrint} className="btn btn-outline" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            🖨️ Chop etish
+            <SiteIcon name="printer" size={16} /> Chop etish
           </button>
           <button
             onClick={handleDownloadPDF}
@@ -153,7 +154,7 @@ export default function ContractModal({ isOpen, onClose, bookingData }: Contract
             style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             id="download-contract-pdf-btn"
           >
-            📥 {downloading ? "Generatsiya..." : "PDF Shartnomani Yuklab Olish"}
+            <SiteIcon name="download" size={16} /> {downloading ? "Generatsiya..." : "PDF Shartnomani Yuklab Olish"}
           </button>
         </div>
       </div>

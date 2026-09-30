@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SiteIcon from "@/components/SiteIcon";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -74,7 +75,7 @@ export default async function BookingDetailPage({
               color: "var(--accent-emerald)",
             }}
           >
-            ✓
+            <SiteIcon name="check" size={32} />
           </div>
 
           <span
@@ -154,7 +155,7 @@ export default async function BookingDetailPage({
 
             <div className="flex-between">
               <span>To'lov holati:</span>
-              <span className="badge badge-available">● {booking.paymentStatus}</span>
+              <span className="badge badge-available"><SiteIcon name="circleDot" size={14} /> {booking.paymentStatus}</span>
             </div>
 
             <div
@@ -189,10 +190,10 @@ export default async function BookingDetailPage({
         {/* Action Buttons */}
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/cars" className="btn btn-outline">
-            ← Avtoparkka qaytish
+            <SiteIcon name="arrowLeft" size={16} /> Avtoparkka qaytish
           </Link>
           <Link href="/admin/bookings" className="btn btn-primary">
-            ⚡ Admin CRM-da ko'rish
+            <SiteIcon name="zap" size={16} /> Admin CRM-da ko'rish
           </Link>
         </div>
       </main>

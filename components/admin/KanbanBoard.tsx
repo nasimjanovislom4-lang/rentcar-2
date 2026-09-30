@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ContractModal from "./ContractModal";
+import SiteIcon from "@/components/SiteIcon";
 
 export interface BookingWithDetails {
   id: string;
@@ -106,13 +107,13 @@ export default function KanbanBoard({
             onClick={() => setViewMode("kanban")}
             className={`btn btn-sm ${viewMode === "kanban" ? "btn-primary" : "btn-outline"}`}
           >
-            📋 Kanban Doskasi
+            <SiteIcon name="clipboard" size={16} /> Kanban Doskasi
           </button>
           <button
             onClick={() => setViewMode("table")}
             className={`btn btn-sm ${viewMode === "table" ? "btn-primary" : "btn-outline"}`}
           >
-            📊 Jadval Ko'rinishi
+            <SiteIcon name="table" size={16} /> Jadval Ko'rinishi
           </button>
         </div>
       </div>
@@ -217,7 +218,7 @@ export default function KanbanBoard({
                           style={{ flexGrow: 1, fontSize: "0.75rem", padding: "0.3rem" }}
                           title="PDF Shartnoma va Aktni shakllantirish"
                         >
-                          📄 PDF Shartnoma
+                          <SiteIcon name="fileText" size={14} /> PDF Shartnoma
                         </button>
                       </div>
 
@@ -294,7 +295,7 @@ export default function KanbanBoard({
                         onClick={() => setSelectedBookingForContract(b)}
                         className="btn btn-outline btn-sm"
                       >
-                        📄 PDF Shartnoma
+                        <SiteIcon name="fileText" size={14} /> PDF Shartnoma
                       </button>
                     </td>
                   </tr>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteIcon, { type SiteIconName } from "@/components/SiteIcon";
 
 interface FinanceClientViewProps {
   totalRevenue: number;
@@ -68,15 +69,15 @@ export default function FinanceClientView({
   const getMethodBadge = (m: string) => {
     switch (m) {
       case "PAYME":
-        return { label: "Payme", color: "#00cccc", icon: "💳" };
+        return { label: "Payme", color: "#00cccc", icon: "creditCard" as SiteIconName };
       case "CLICK":
-        return { label: "Click", color: "#0070ba", icon: "📱" };
+        return { label: "Click", color: "#0070ba", icon: "smartphone" as SiteIconName };
       case "CASH":
-        return { label: "Naqd pul", color: "#10b981", icon: "💵" };
+        return { label: "Naqd pul", color: "#10b981", icon: "banknote" as SiteIconName };
       case "BANK_TRANSFER":
-        return { label: "Bank o'tkazmasi", color: "#8b5cf6", icon: "🏦" };
+        return { label: "Bank o'tkazmasi", color: "#8b5cf6", icon: "landmark" as SiteIconName };
       default:
-        return { label: m, color: "var(--accent-blue)", icon: "💰" };
+        return { label: m, color: "var(--accent-blue)", icon: "circleDollar" as SiteIconName };
     }
   };
 
@@ -106,7 +107,7 @@ export default function FinanceClientView({
           style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
           id="export-finance-csv-btn"
         >
-          📊 Excel (CSV) Hisobotini Yuklab Olish
+          <SiteIcon name="fileSpreadsheet" size={16} /> Excel (CSV) Hisobotini Yuklab Olish
         </button>
       </div>
 
@@ -118,7 +119,7 @@ export default function FinanceClientView({
             {formatPrice(totalRevenue)}
           </div>
           <div style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.4rem" }}>
-            ✓ {bookings.length} ta muvaffaqiyatli buyurtma
+            <SiteIcon name="check" size={14} /> {bookings.length} ta muvaffaqiyatli buyurtma
           </div>
         </div>
 
@@ -128,7 +129,7 @@ export default function FinanceClientView({
             {formatPrice(totalExpenses)}
           </div>
           <div style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.4rem" }}>
-            ⚠️ {expenses.length} ta qayd etilgan xarajat
+            <SiteIcon name="alert" size={14} /> {expenses.length} ta qayd etilgan xarajat
           </div>
         </div>
 
@@ -158,7 +159,7 @@ export default function FinanceClientView({
                 <div key={item.method}>
                   <div className="flex-between" style={{ fontSize: "0.9rem", marginBottom: "0.3rem" }}>
                     <span>
-                      {meta.icon} <strong>{meta.label}</strong> ({item.count} ta to'lov)
+                      <SiteIcon name={meta.icon} size={16} /> <strong>{meta.label}</strong> ({item.count} ta to'lov)
                     </span>
                     <span style={{ fontWeight: 700 }}>
                       {formatPrice(item.total)} ({percent}%)

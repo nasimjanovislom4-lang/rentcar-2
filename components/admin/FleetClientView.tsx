@@ -3,6 +3,7 @@
 import { useState } from "react";
 import GPSMap, { GPSVehicle } from "@/components/admin/GPSMap";
 import CarEditModal from "@/components/admin/CarEditModal";
+import SiteIcon from "@/components/SiteIcon";
 
 export interface FleetCarItem {
   id: string;
@@ -88,7 +89,7 @@ export default function FleetClientView({ initialCars }: { initialCars: FleetCar
         </div>
 
         <button onClick={() => setIsModalOpen(true)} className="btn btn-primary" id="add-car-btn">
-          ➕ Yangi Mashina Qo'shish
+          <SiteIcon name="plus" size={16} /> Yangi Mashina Qo'shish
         </button>
       </div>
 

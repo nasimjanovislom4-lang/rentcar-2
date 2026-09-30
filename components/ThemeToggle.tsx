@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import SiteIcon from "@/components/SiteIcon";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -42,7 +43,7 @@ export default function ThemeToggle() {
       aria-label="Mavzuni almashtirish"
       id="theme-toggle-btn"
     >
-      {theme === "dark" ? "☀️" : "🌙"}
+      <SiteIcon name={theme === "dark" ? "sun" : "moon"} size={20} />
     </button>
   );
 }

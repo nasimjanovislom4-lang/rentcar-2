@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteIcon from "@/components/SiteIcon";
 
 export interface GPSVehicle {
   id: string;
@@ -50,7 +51,7 @@ export default function GPSMap({ vehicles }: { vehicles: GPSVehicle[] }) {
       <div className="flex-between" style={{ marginBottom: "1.2rem", flexWrap: "wrap", gap: "1rem" }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span style={{ fontSize: "1.3rem" }}>🛰️</span>
+            <span style={{ fontSize: "1.3rem" }}><SiteIcon name="satellite" size={20} /></span>
             <h3 style={{ fontSize: "1.15rem", fontWeight: 700 }}>GPS Monitoring & Real-Vaqt Xaritasi</h3>
           </div>
           <span style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
@@ -108,16 +109,16 @@ export default function GPSMap({ vehicles }: { vehicles: GPSVehicle[] }) {
 
           {/* Map Overlay Landmark Labels */}
           <div style={{ position: "absolute", top: "15px", left: "20px", fontSize: "0.75rem", color: "rgba(255, 255, 255, 0.3)" }}>
-            📍 Toshkent (Yunusobod)
+            <SiteIcon name="mapPin" size={12} /> Toshkent (Yunusobod)
           </div>
           <div style={{ position: "absolute", bottom: "15px", left: "20px", fontSize: "0.75rem", color: "rgba(255, 255, 255, 0.3)" }}>
-            📍 Sergeli & Janubiy Vokzal
+            <SiteIcon name="mapPin" size={12} /> Sergeli & Janubiy Vokzal
           </div>
           <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", fontSize: "0.75rem", color: "rgba(255, 255, 255, 0.25)" }}>
-            📍 Amir Temur Xiyoboni (Markaz)
+            <SiteIcon name="mapPin" size={12} /> Amir Temur Xiyoboni (Markaz)
           </div>
           <div style={{ position: "absolute", top: "40%", right: "20px", fontSize: "0.75rem", color: "rgba(255, 255, 255, 0.3)" }}>
-            📍 Chilonzor & Bunyodkor
+            <SiteIcon name="mapPin" size={12} /> Chilonzor & Bunyodkor
           </div>
 
           {/* Vehicle Markers */}
@@ -175,7 +176,7 @@ export default function GPSMap({ vehicles }: { vehicles: GPSVehicle[] }) {
                     border: "2px solid #ffffff",
                   }}
                 >
-                  🚘
+                  <SiteIcon name="carFront" size={16} />
                 </div>
 
                 {/* Tag */}

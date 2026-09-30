@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroQuickSearch from "@/components/HeroQuickSearch";
 import CarCard from "@/components/CarCard";
+import SiteIcon from "@/components/SiteIcon";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -42,7 +43,7 @@ export default async function HomePage() {
               marginBottom: "1.5rem",
             }}
           >
-            <span>✨</span> O'zbekistondagi №1 Premium Avtomobillar Ijarasi
+            <SiteIcon name="sparkles" size={16} /> O'zbekistondagi №1 Premium Avtomobillar Ijarasi
           </div>
 
           <h1
@@ -108,7 +109,7 @@ export default async function HomePage() {
             </div>
 
             <Link href="/cars" className="btn btn-outline">
-              Barcha modellarni ko'rish →
+              Barcha modellarni ko'rish <SiteIcon name="arrowRight" size={16} />
             </Link>
           </div>
 
@@ -155,7 +156,7 @@ export default async function HomePage() {
             }}
           >
             <div className="glass-card" style={{ padding: "2rem", textAlign: "center" }}>
-              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>🛡️</div>
+              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}><SiteIcon name="shieldCheck" size={40} /></div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
                 100% KASKO Sug'urta
               </h3>
@@ -165,7 +166,7 @@ export default async function HomePage() {
             </div>
 
             <div className="glass-card" style={{ padding: "2rem", textAlign: "center" }}>
-              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>⚡</div>
+              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}><SiteIcon name="zap" size={40} /></div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
                 5 Daqiqada Rasmiylashtirish
               </h3>
@@ -175,7 +176,7 @@ export default async function HomePage() {
             </div>
 
             <div className="glass-card" style={{ padding: "2rem", textAlign: "center" }}>
-              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>✨</div>
+              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}><SiteIcon name="sparkles" size={40} /></div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
                 Ideal Texnik Holat
               </h3>
@@ -185,7 +186,7 @@ export default async function HomePage() {
             </div>
 
             <div className="glass-card" style={{ padding: "2rem", textAlign: "center" }}>
-              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>📍</div>
+              <div style={{ fontSize: "2.5rem", marginBottom: "1rem" }}><SiteIcon name="mapPin" size={40} /></div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
                 Istalgan Joyga Yetkazish
               </h3>
@@ -215,7 +216,9 @@ export default async function HomePage() {
             }}
           >
             <div className="glass-card" style={{ padding: "1.75rem" }}>
-              <div style={{ color: "var(--accent-amber)", marginBottom: "0.75rem" }}>★★★★★</div>
+              <div style={{ color: "var(--accent-amber)", marginBottom: "0.75rem" }}>
+                {Array.from({ length: 5 }, (_, index) => <SiteIcon key={index} name="star" size={16} />)}
+              </div>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "1rem" }}>
                 "Chevrolet Tahoe avtomobilini mehmonlarni kutib olish uchun ijaraga oldik. Mashina yangi, toza,
                 aeroportga vaqtida yetkazib berildi. Juda minnatdormiz!"
@@ -225,7 +228,9 @@ export default async function HomePage() {
             </div>
 
             <div className="glass-card" style={{ padding: "1.75rem" }}>
-              <div style={{ color: "var(--accent-amber)", marginBottom: "0.75rem" }}>★★★★★</div>
+              <div style={{ color: "var(--accent-amber)", marginBottom: "0.75rem" }}>
+                {Array.from({ length: 5 }, (_, index) => <SiteIcon key={index} name="star" size={16} />)}
+              </div>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "1rem" }}>
                 "BYD Song Plus EV bilan Samarqand va Buxoroga sayohat qildik. Juda tejamkor va qulay krossover.
                 Shartnoma tuzish 3 daqiqa vaqt oldi xolos."
@@ -235,7 +240,9 @@ export default async function HomePage() {
             </div>
 
             <div className="glass-card" style={{ padding: "1.75rem" }}>
-              <div style={{ color: "var(--accent-amber)", marginBottom: "0.75rem" }}>★★★★★</div>
+              <div style={{ color: "var(--accent-amber)", marginBottom: "0.75rem" }}>
+                {Array.from({ length: 5 }, (_, index) => <SiteIcon key={index} name="star" size={16} />)}
+              </div>
               <p style={{ fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "1rem" }}>
                 "Kompaniya avtoparki doim alo darajada. Malibu 2 ni tez-tez ish uchrashuvlari uchun olaman.
                 Qora ro'yxat va depozit qaytarish tartibi ham juda adolatli."

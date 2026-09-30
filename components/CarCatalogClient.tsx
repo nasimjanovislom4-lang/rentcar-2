@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import LiveCarFilters, { FilterState } from "@/components/LiveCarFilters";
 import CarCard, { CarItemProps } from "@/components/CarCard";
+import SiteIcon from "@/components/SiteIcon";
 
 interface CarCatalogClientProps {
   initialCars: CarItemProps[];
@@ -88,7 +89,7 @@ export default function CarCatalogClient({ initialCars, initialCategory }: CarCa
               gap: "1rem",
             }}
           >
-            <span style={{ fontSize: "3rem" }}>🔍</span>
+            <span style={{ fontSize: "3rem" }}><SiteIcon name="search" size={44} /></span>
             <h3 style={{ fontSize: "1.4rem", fontWeight: 700 }}>Hech qanday avtomobil topilmadi</h3>
             <p style={{ color: "var(--text-secondary)", maxWidth: "450px" }}>
               Tanlangan filtrlar bo'yicha mos keladigan avtomobil mavjud emas. Filtrlarni o'zgartirib yoki

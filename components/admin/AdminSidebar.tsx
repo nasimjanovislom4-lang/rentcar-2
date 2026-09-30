@@ -2,17 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import SiteIcon, { type SiteIconName } from "@/components/SiteIcon";
 
 export default function AdminSidebar() {
   const pathname = usePathname();
 
-  const navItems = [
-    { label: "Dashboard", href: "/admin/dashboard", icon: "📊" },
-    { label: "Avtopark & GPS", href: "/admin/fleet", icon: "🚘" },
-    { label: "Buyurtmalar & Kanban", href: "/admin/bookings", icon: "📋" },
-    { label: "Mijozlar & Blacklist", href: "/admin/clients", icon: "👥" },
-    { label: "Moliya & Hisobotlar", href: "/admin/finance", icon: "📈" },
-    { label: "Xodimlar & RBAC", href: "/admin/team", icon: "🛡️" },
+  const navItems: { label: string; href: string; icon: SiteIconName }[] = [
+    { label: "Dashboard", href: "/admin/dashboard", icon: "chart" },
+    { label: "Avtopark & GPS", href: "/admin/fleet", icon: "carFront" },
+    { label: "Buyurtmalar & Kanban", href: "/admin/bookings", icon: "clipboard" },
+    { label: "Mijozlar & Blacklist", href: "/admin/clients", icon: "users" },
+    { label: "Moliya & Hisobotlar", href: "/admin/finance", icon: "chart" },
+    { label: "Xodimlar & RBAC", href: "/admin/team", icon: "shield" },
   ];
 
   return (
@@ -55,7 +56,7 @@ export default function AdminSidebar() {
               fontSize: "0.9rem",
             }}
           >
-            ⚡
+            <SiteIcon name="zap" size={18} />
           </span>
           <span>
             AutoRent <span style={{ color: "var(--accent-blue)" }}>CRM</span>
@@ -98,7 +99,7 @@ export default function AdminSidebar() {
                 transition: "all var(--transition-fast)",
               }}
             >
-              <span>{item.icon}</span>
+              <span><SiteIcon name={item.icon} size={18} /></span>
               <span>{item.label}</span>
             </Link>
           );
@@ -120,7 +121,7 @@ export default function AdminSidebar() {
           className="btn btn-outline btn-sm"
           style={{ width: "100%", justifyContent: "flex-start", gap: "0.6rem" }}
         >
-          <span>🌐</span> Mijoz saytiga o'tish
+          <SiteIcon name="globe" size={16} /> Mijoz saytiga o'tish
         </Link>
         <div style={{ fontSize: "0.75rem", color: "var(--text-muted)", paddingLeft: "0.5rem" }}>
           Tizim versiyasi: v1.0.0 Pro

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteIcon from "@/components/SiteIcon";
 
 export interface CarItemProps {
   id: string;
@@ -30,13 +31,13 @@ export default function CarCard({ car }: { car: CarItemProps }) {
   const getStatusBadge = () => {
     switch (car.status) {
       case "AVAILABLE":
-        return <span className="badge badge-available">● Bo'sh</span>;
+        return <span className="badge badge-available"><SiteIcon name="circleDot" size={12} /> Bo'sh</span>;
       case "RENTED":
-        return <span className="badge badge-rented">● Ijarada</span>;
+        return <span className="badge badge-rented"><SiteIcon name="circleDot" size={12} /> Ijarada</span>;
       case "MAINTENANCE":
-        return <span className="badge badge-maintenance">● Servisda</span>;
+        return <span className="badge badge-maintenance"><SiteIcon name="circleDot" size={12} /> Servisda</span>;
       default:
-        return <span className="badge badge-info">● Band</span>;
+        return <span className="badge badge-info"><SiteIcon name="circleDot" size={12} /> Band</span>;
     }
   };
 
@@ -115,10 +116,10 @@ export default function CarCard({ car }: { car: CarItemProps }) {
             marginBottom: "1.25rem",
           }}
         >
-          <div>🕹️ {car.transmission === "AUTOMATIC" ? "Avtomat" : "Mexanika"}</div>
-          <div>👥 {car.seats} o'rindiq</div>
-          <div>⛽ {car.fuelType}</div>
-          <div>🛡️ KASKO sug'urta</div>
+          <div><SiteIcon name="settings" size={14} /> {car.transmission === "AUTOMATIC" ? "Avtomat" : "Mexanika"}</div>
+          <div><SiteIcon name="users" size={14} /> {car.seats} o'rindiq</div>
+          <div><SiteIcon name="fuel" size={14} /> {car.fuelType}</div>
+          <div><SiteIcon name="shieldCheck" size={14} /> KASKO sug'urta</div>
         </div>
 
         {/* Price & Action */}

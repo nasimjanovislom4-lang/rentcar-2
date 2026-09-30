@@ -1,8 +1,10 @@
+import SiteIcon, { type SiteIconName } from "@/components/SiteIcon";
+
 interface StatCardProps {
   title: string;
   value: string | number;
   subtitle: string;
-  icon: string;
+  icon: SiteIconName;
   trend?: string;
   color?: "blue" | "green" | "amber" | "rose";
 }
@@ -69,7 +71,7 @@ export default function StatCard({
             fontSize: "1.2rem",
           }}
         >
-          {icon}
+          <SiteIcon name={icon} size={24} />
         </span>
       </div>
 

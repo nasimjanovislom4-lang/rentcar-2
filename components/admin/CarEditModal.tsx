@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteIcon from "@/components/SiteIcon";
 
 interface CarEditModalProps {
   isOpen: boolean;
@@ -102,7 +103,7 @@ export default function CarEditModal({ isOpen, onClose, onSuccess }: CarEditModa
         <div className="flex-between" style={{ marginBottom: "1.5rem" }}>
           <h2 style={{ fontSize: "1.3rem", fontWeight: 800 }}>Yangi Avtomobil Qo'shish</h2>
           <button onClick={onClose} style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>
-            ✕
+            <SiteIcon name="x" size={18} />
           </button>
         </div>
 
@@ -117,7 +118,7 @@ export default function CarEditModal({ isOpen, onClose, onSuccess }: CarEditModa
               fontSize: "0.85rem",
             }}
           >
-            ⚠️ {error}
+            <SiteIcon name="alert" size={16} /> {error}
           </div>
         )}
 

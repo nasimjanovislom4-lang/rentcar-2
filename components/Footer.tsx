@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteIcon from "@/components/SiteIcon";
 
 export default function Footer() {
   return (
@@ -30,7 +31,7 @@ export default function Footer() {
                 marginBottom: "1rem",
               }}
             >
-              <span>🚗</span> AutoRent <span style={{ color: "var(--accent-blue)" }}>Pro</span>
+              <SiteIcon name="carFront" size={20} /> AutoRent <span style={{ color: "var(--accent-blue)" }}>Pro</span>
             </div>
             <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.6 }}>
               Toshkent va butun O'zbekiston bo'ylab premium va ishonchli avtomobillar ijarasi.
@@ -80,10 +81,10 @@ export default function Footer() {
                 color: "var(--text-secondary)",
               }}
             >
-              <p>📍 Toshkent sh., Chilonzor tumani, Bunyodkor shoh ko'chasi 42</p>
-              <p>📞 +998 71 200 00 00 / +998 90 123 45 67</p>
-              <p>✉️ info@autorent.uz</p>
-              <p>⏰ Ish tartibi: 24/7 dam olish kunlarisiz</p>
+              <p><SiteIcon name="mapPin" size={16} /> Toshkent sh., Chilonzor tumani, Bunyodkor shoh ko'chasi 42</p>
+              <p><SiteIcon name="phone" size={16} /> +998 71 200 00 00 / +998 90 123 45 67</p>
+              <p><SiteIcon name="mail" size={16} /> info@autorent.uz</p>
+              <p><SiteIcon name="clock" size={16} /> Ish tartibi: 24/7 dam olish kunlarisiz</p>
             </div>
           </div>
         </div>

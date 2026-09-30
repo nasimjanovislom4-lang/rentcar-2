@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import AdminHeader from "@/components/admin/AdminHeader";
 import StatCard from "@/components/admin/StatCard";
 import NotificationList from "@/components/admin/NotificationList";
+import SiteIcon, { type SiteIconName } from "@/components/SiteIcon";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -51,7 +52,7 @@ export default async function AdminDashboardPage() {
             title="Umumiy Tushum"
             value={formatPrice(totalRevenue)}
             subtitle="Bu oydagi faol ijara tushumlari"
-            icon="💰"
+            icon={"wallet" satisfies SiteIconName}
             trend="+18.4%"
             color="green"
           />
@@ -60,7 +61,7 @@ export default async function AdminDashboardPage() {
             title="Ijaradagi Avtomobillar"
             value={`${rentedCars} / ${totalCars}`}
             subtitle={`Avtopark bandligi: ${fleetUtilizationRate}%`}
-            icon="🚘"
+            icon={"carFront" satisfies SiteIconName}
             trend={`${fleetUtilizationRate}% band`}
             color="blue"
           />
@@ -69,7 +70,7 @@ export default async function AdminDashboardPage() {
             title="Bo'sh Avtomobillar"
             value={`${availableCars} ta`}
             subtitle="Bron qilishga tayyor"
-            icon="✨"
+            icon={"sparkles" satisfies SiteIconName}
             color="amber"
           />
 
@@ -77,7 +78,7 @@ export default async function AdminDashboardPage() {
             title="Texnik Servisda"
             value={`${maintenanceCars} ta`}
             subtitle="Ta'mir yoki ko'rikda"
-            icon="🛠️"
+            icon={"wrench" satisfies SiteIconName}
             color="rose"
           />
         </div>
@@ -102,7 +103,7 @@ export default async function AdminDashboardPage() {
                 </span>
               </div>
               <Link href="/admin/bookings" className="btn btn-outline btn-sm">
-                Barchasi (Kanban) →
+                Barchasi (Kanban) <SiteIcon name="arrowRight" size={16} />
               </Link>
             </div>
 

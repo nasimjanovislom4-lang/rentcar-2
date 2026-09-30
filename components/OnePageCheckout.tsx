@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { calculateBookingPrice } from "@/lib/pricing";
+import SiteIcon, { type SiteIconName } from "@/components/SiteIcon";
 
 interface CarDetail {
   id: string;
@@ -131,7 +132,7 @@ export default function OnePageCheckout({
             fontSize: "0.95rem",
           }}
         >
-          ⚠️ {errorMessage}
+          <SiteIcon name="alert" size={16} /> {errorMessage}
         </div>
       )}
 
@@ -400,9 +401,9 @@ export default function OnePageCheckout({
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1rem" }}>
               {[
-                { id: "CLICK", name: "Click Up", icon: "🟢" },
-                { id: "PAYME", name: "Payme", icon: "🔵" },
-                { id: "CASH", name: "Naqd to'lov", icon: "💵" },
+                { id: "CLICK", name: "Click Up", icon: "smartphone" as SiteIconName },
+                { id: "PAYME", name: "Payme", icon: "creditCard" as SiteIconName },
+                { id: "CASH", name: "Naqd to'lov", icon: "banknote" as SiteIconName },
               ].map((p) => (
                 <div
                   key={p.id}
@@ -417,7 +418,7 @@ export default function OnePageCheckout({
                     transition: "all var(--transition-fast)",
                   }}
                 >
-                  <div style={{ fontSize: "1.6rem", marginBottom: "0.4rem" }}>{p.icon}</div>
+                  <div style={{ fontSize: "1.6rem", marginBottom: "0.4rem" }}><SiteIcon name={p.icon} size={26} /></div>
                   <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>{p.name}</div>
                 </div>
               ))}
@@ -473,7 +474,7 @@ export default function OnePageCheckout({
                   {pricing.discountPercentage > 0 && (
                     <div className="flex-between" style={{ color: "var(--accent-emerald)" }}>
                       <span>Uzoq muddatli chegirma ({pricing.discountPercentage}%):</span>
-                      <span>Qo'llandi ✓</span>
+                      <span>Qo'llandi <SiteIcon name="check" size={12} /></span>
                     </div>
                   )}
                   <div className="flex-between">
@@ -520,7 +521,7 @@ export default function OnePageCheckout({
                   style={{ width: "100%", padding: "1rem", fontSize: "1rem" }}
                   id="checkout-submit-btn"
                 >
-                  {loading ? "Rasmiylashtirilmoqda..." : "🔒 Buyurtmani Tasdiqlash"}
+                  {loading ? "Rasmiylashtirilmoqda..." : <><SiteIcon name="lock" size={16} /> Buyurtmani Tasdiqlash</>}
                 </button>
 
                 <p

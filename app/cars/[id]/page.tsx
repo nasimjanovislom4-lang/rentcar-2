@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CarGallery360 from "@/components/CarGallery360";
 import AvailabilityCalendar from "@/components/AvailabilityCalendar";
+import SiteIcon from "@/components/SiteIcon";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -93,7 +94,7 @@ export default async function CarDetailPage({
                       color: "var(--text-secondary)",
                     }}
                   >
-                    <span style={{ color: "var(--accent-emerald)" }}>✓</span>
+                    <SiteIcon name="check" size={16} style={{ color: "var(--accent-emerald)" }} />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -175,9 +176,9 @@ export default async function CarDetailPage({
                 </span>
 
                 {car.status === "AVAILABLE" ? (
-                  <span className="badge badge-available">● Hozir mavjud</span>
+                  <span className="badge badge-available"><SiteIcon name="circleDot" size={14} /> Hozir mavjud</span>
                 ) : (
-                  <span className="badge badge-maintenance">● {car.status}</span>
+                  <span className="badge badge-maintenance"><SiteIcon name="circleDot" size={14} /> {car.status}</span>
                 )}
               </div>
 
@@ -218,10 +219,10 @@ export default async function CarDetailPage({
                   marginBottom: "2rem",
                 }}
               >
-                <div>✓ KASKO va OSAGO to'liq sug'urta qilingan</div>
-                <div>✓ Depozit avtomobil qaytarilgach 100% qaytariladi</div>
-                <div>✓ Bepul yuvilgan va to'liq yonilg'i bilan topshiriladi</div>
-                <div>✓ Cheklanmagan kunlik masofa (limit yo'q)</div>
+                <div><SiteIcon name="check" size={14} /> KASKO va OSAGO to'liq sug'urta qilingan</div>
+                <div><SiteIcon name="check" size={14} /> Depozit avtomobil qaytarilgach 100% qaytariladi</div>
+                <div><SiteIcon name="check" size={14} /> Bepul yuvilgan va to'liq yonilg'i bilan topshiriladi</div>
+                <div><SiteIcon name="check" size={14} /> Cheklanmagan kunlik masofa (limit yo'q)</div>
               </div>
 
               {car.status === "AVAILABLE" ? (
@@ -231,7 +232,7 @@ export default async function CarDetailPage({
                   style={{ width: "100%", padding: "0.9rem" }}
                   id="book-now-cta"
                 >
-                  ⚡ Tezkor bron qilish
+                  <SiteIcon name="zap" size={16} /> Tezkor bron qilish
                 </Link>
               ) : (
                 <button

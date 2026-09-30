@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteIcon from "@/components/SiteIcon";
 
 interface CarGallery360Props {
   images: string[];
@@ -73,7 +74,7 @@ export default function CarGallery360({ images, carName }: CarGallery360Props) {
               background: "rgba(37, 99, 235, 0.85)",
             }}
           >
-            🔄 {isRotating ? "Aylanmoqda..." : "360° Ko'rish"}
+            <SiteIcon name="rotate" size={16} /> {isRotating ? "Aylanmoqda..." : "360° Ko'rish"}
           </button>
         </div>
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import SiteIcon from "@/components/SiteIcon";
 
 export default function HeroQuickSearch() {
   const router = useRouter();
@@ -49,7 +50,7 @@ export default function HeroQuickSearch() {
         >
           {/* Pickup location */}
           <div className="form-group">
-            <label className="form-label">📍 Olish manzili</label>
+            <label className="form-label"><SiteIcon name="mapPin" size={16} /> Olish manzili</label>
             <select
               value={pickupLocation}
               onChange={(e) => setPickupLocation(e.target.value)}
@@ -64,7 +65,7 @@ export default function HeroQuickSearch() {
 
           {/* Category */}
           <div className="form-group">
-            <label className="form-label">🚘 Avtomobil toifasi</label>
+            <label className="form-label"><SiteIcon name="carFront" size={16} /> Avtomobil toifasi</label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
@@ -80,7 +81,7 @@ export default function HeroQuickSearch() {
 
           {/* Pickup Date */}
           <div className="form-group">
-            <label className="form-label">📅 Olish sanasi</label>
+            <label className="form-label"><SiteIcon name="calendar" size={16} /> Olish sanasi</label>
             <input
               type="date"
               value={pickupDate}
@@ -92,7 +93,7 @@ export default function HeroQuickSearch() {
 
           {/* Return Date */}
           <div className="form-group">
-            <label className="form-label">📅 Qaytarish sanasi</label>
+            <label className="form-label"><SiteIcon name="calendar" size={16} /> Qaytarish sanasi</label>
             <input
               type="date"
               value={returnDate}
@@ -110,7 +111,7 @@ export default function HeroQuickSearch() {
               style={{ width: "100%", height: "46px" }}
               id="hero-search-btn"
             >
-              🔍 Mashina qidirish
+              <SiteIcon name="search" size={16} /> Mashina qidirish
             </button>
           </div>
         </div>

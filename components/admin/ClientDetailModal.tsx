@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteIcon from "@/components/SiteIcon";
 
 interface ClientDetailModalProps {
   isOpen: boolean;
@@ -106,7 +107,7 @@ export default function ClientDetailModal({
             </h2>
           </div>
           <button onClick={onClose} style={{ fontSize: "1.4rem", color: "var(--text-muted)" }}>
-            ✕
+            <SiteIcon name="x" size={18} />
           </button>
         </div>
 
@@ -217,10 +218,10 @@ export default function ClientDetailModal({
                 background: "rgba(255,255,255,0.02)",
               }}
             >
-              <div style={{ fontSize: "1.8rem", marginBottom: "0.3rem" }}>🪪</div>
+              <div style={{ fontSize: "1.8rem", marginBottom: "0.3rem" }}><SiteIcon name="idCard" size={28} /></div>
               <p style={{ fontSize: "0.85rem", fontWeight: 600 }}>Fuqarolik Pasporti / ID Karta</p>
               <span className="badge badge-success" style={{ marginTop: "0.5rem" }}>
-                ✓ Asli tekshirildi ({client.passportNumber})
+                <SiteIcon name="check" size={14} /> Asli tekshirildi ({client.passportNumber})
               </span>
             </div>
             <div
@@ -232,10 +233,10 @@ export default function ClientDetailModal({
                 background: "rgba(255,255,255,0.02)",
               }}
             >
-              <div style={{ fontSize: "1.8rem", marginBottom: "0.3rem" }}>🚗</div>
+              <div style={{ fontSize: "1.8rem", marginBottom: "0.3rem" }}><SiteIcon name="car" size={28} /></div>
               <p style={{ fontSize: "0.85rem", fontWeight: 600 }}>Haydovchilik Guvohnomasi</p>
               <span className="badge badge-success" style={{ marginTop: "0.5rem" }}>
-                ✓ Asli tekshirildi ({client.driverLicenseNumber})
+                <SiteIcon name="check" size={14} /> Asli tekshirildi ({client.driverLicenseNumber})
               </span>
             </div>
           </div>

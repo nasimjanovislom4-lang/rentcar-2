@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SiteIcon, { type SiteIconName } from "@/components/SiteIcon";
 
 interface TeamClientViewProps {
   initialUsers: any[];
@@ -91,15 +92,15 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
   const getRoleBadge = (r: string) => {
     switch (r) {
       case "SUPER_ADMIN":
-        return { label: "Super Admin", color: "badge-danger", icon: "👑" };
+        return { label: "Super Admin", color: "badge-danger", icon: "crown" as SiteIconName };
       case "MANAGER":
-        return { label: "Menejer (Operator)", color: "badge-primary", icon: "💼" };
+        return { label: "Menejer (Operator)", color: "badge-primary", icon: "briefcase" as SiteIconName };
       case "MECHANIC":
-        return { label: "Bosh Mexanik", color: "badge-warning", icon: "🔧" };
+        return { label: "Bosh Mexanik", color: "badge-warning", icon: "wrench" as SiteIconName };
       case "ACCOUNTANT":
-        return { label: "Buxgalter", color: "badge-success", icon: "📊" };
+        return { label: "Buxgalter", color: "badge-success", icon: "chart" as SiteIconName };
       default:
-        return { label: r, color: "badge-outline", icon: "👤" };
+        return { label: r, color: "badge-outline", icon: "user" as SiteIconName };
     }
   };
 
@@ -119,7 +120,7 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
           style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
           id="add-staff-btn"
         >
-          ➕ Yangi Xodim Qo'shish
+          <SiteIcon name="plus" size={16} /> Yangi Xodim Qo'shish
         </button>
       </div>
 
@@ -140,7 +141,7 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
       {/* Permissions Matrix Cards */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.2rem", marginBottom: "2rem" }}>
         <div className="glass-card" style={{ padding: "1.2rem", borderRadius: "var(--radius-md)" }}>
-          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}>👑</div>
+          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}><SiteIcon name="crown" size={22} /></div>
           <h4 style={{ fontWeight: 800, fontSize: "1rem" }}>Super Admin</h4>
           <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginTop: "0.3rem" }}>
             Cheklovlarsiz to'liq huquqlar: xodimlarni boshqarish, moliyaviy hisobotlar, sozlamalar va narxlarni o'zgartirish.
@@ -148,7 +149,7 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
         </div>
 
         <div className="glass-card" style={{ padding: "1.2rem", borderRadius: "var(--radius-md)" }}>
-          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}>💼</div>
+          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}><SiteIcon name="briefcase" size={22} /></div>
           <h4 style={{ fontWeight: 800, fontSize: "1rem" }}>Menejer (Operator)</h4>
           <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginTop: "0.3rem" }}>
             Buyurtmalar qabuli, mijozlar bilan aloqa, statuslarni yangilash, shartnoma chiqarish va avtomobil topshirish.
@@ -156,7 +157,7 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
         </div>
 
         <div className="glass-card" style={{ padding: "1.2rem", borderRadius: "var(--radius-md)" }}>
-          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}>🔧</div>
+          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}><SiteIcon name="wrench" size={22} /></div>
           <h4 style={{ fontWeight: 800, fontSize: "1rem" }}>Mexanik</h4>
           <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginTop: "0.3rem" }}>
             Avtopark texnik monitoringi, ta'mirlash xarajatlari, moy va ehtiyot qismlarni yangilash, odometr ko'rsatkichlari.
@@ -164,7 +165,7 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
         </div>
 
         <div className="glass-card" style={{ padding: "1.2rem", borderRadius: "var(--radius-md)" }}>
-          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}>📊</div>
+          <div style={{ fontSize: "1.3rem", marginBottom: "0.4rem" }}><SiteIcon name="chart" size={22} /></div>
           <h4 style={{ fontWeight: 800, fontSize: "1rem" }}>Buxgalter</h4>
           <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginTop: "0.3rem" }}>
             Moliyaviy hisobotlar, tushum va xarajatlar statistikasi, to'lovlar tahlili va Excel (CSV) eksporti.
@@ -283,7 +284,7 @@ export default function TeamClientView({ initialUsers }: TeamClientViewProps) {
             <div className="flex-between" style={{ marginBottom: "1.5rem" }}>
               <h3 style={{ fontSize: "1.3rem", fontWeight: 800 }}>Yangi Xodim Ro'yxatdan O'tkazish</h3>
               <button onClick={() => setShowAddModal(false)} style={{ fontSize: "1.4rem", color: "var(--text-muted)" }}>
-                ✕
+                <SiteIcon name="x" size={18} />
               </button>
             </div>
 

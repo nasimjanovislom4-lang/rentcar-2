@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import SiteIcon from "@/components/SiteIcon";
 
 export default function Navbar() {
   return (
@@ -42,7 +43,7 @@ export default function Navbar() {
                 boxShadow: "0 4px 12px var(--accent-blue-glow)",
               }}
             >
-              🚗
+              <SiteIcon name="carFront" size={20} />
             </span>
             <span>
               AutoRent <span style={{ color: "var(--accent-blue)" }}>Pro</span>
@@ -77,7 +78,7 @@ export default function Navbar() {
                 gap: "0.3rem",
               }}
             >
-              <span>⚡</span> CRM & Admin
+              <SiteIcon name="zap" size={16} /> CRM & Admin
             </Link>
           </nav>
 

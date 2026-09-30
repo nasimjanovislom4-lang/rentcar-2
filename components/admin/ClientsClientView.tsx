@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ClientDetailModal from "./ClientDetailModal";
+import SiteIcon from "@/components/SiteIcon";
 
 interface ClientsClientViewProps {
   initialClients: any[];
@@ -106,7 +107,7 @@ export default function ClientsClientView({ initialClients }: ClientsClientViewP
               id="clients-search-input"
             />
             <span style={{ position: "absolute", left: "0.8rem", top: "50%", transform: "translateY(-50%)", color: "var(--text-muted)" }}>
-              🔍
+              <SiteIcon name="search" size={16} />
             </span>
           </div>
         </div>
@@ -162,7 +163,7 @@ export default function ClientsClientView({ initialClients }: ClientsClientViewP
                     </td>
                     <td style={{ padding: "1rem" }}>
                       <span style={{ color: "var(--accent-yellow)", fontWeight: 700 }}>
-                        ⭐ {client.rating.toFixed(1)}
+                        <SiteIcon name="star" size={14} /> {client.rating.toFixed(1)}
                       </span>
                     </td>
                     <td style={{ padding: "1rem" }}>
@@ -183,7 +184,7 @@ export default function ClientsClientView({ initialClients }: ClientsClientViewP
                       </span>
                       {client.blacklistReason && (
                         <div style={{ fontSize: "0.75rem", color: "#ef4444", marginTop: "0.2rem", maxWidth: "200px" }}>
-                          ⚠️ {client.blacklistReason}
+                          <SiteIcon name="alert" size={14} /> {client.blacklistReason}
                         </div>
                       )}
                     </td>

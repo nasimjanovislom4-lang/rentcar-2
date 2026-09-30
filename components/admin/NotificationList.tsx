@@ -1,3 +1,5 @@
+import SiteIcon from "@/components/SiteIcon";
+
 export interface NotificationItem {
   id: string;
   title: string;
@@ -14,13 +16,13 @@ export default function NotificationList({
   const getBadge = (type: string) => {
     switch (type) {
       case "SERVICE_DUE":
-        return <span className="badge badge-warning">🛠️ Texnik ko'rik</span>;
+        return <span className="badge badge-warning"><SiteIcon name="wrench" size={14} /> Texnik ko'rik</span>;
       case "INSURANCE_EXPIRING":
-        return <span className="badge badge-danger">🛡️ Sug'urta</span>;
+        return <span className="badge badge-danger"><SiteIcon name="shieldCheck" size={14} /> Sug'urta</span>;
       case "NEW_BOOKING":
-        return <span className="badge badge-success">✨ Yangi bron</span>;
+        return <span className="badge badge-success"><SiteIcon name="sparkles" size={14} /> Yangi bron</span>;
       default:
-        return <span className="badge badge-info">🔔 Eslatma</span>;
+        return <span className="badge badge-info"><SiteIcon name="bell" size={14} /> Eslatma</span>;
     }
   };
 
